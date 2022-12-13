@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+@-webkit-keyframes transitionFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes transitionFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #8a03dd;
+}
+
+.container-acord {
+  display: flex;
+  gap: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.acordio-wold h1 {
+  font-weight: 700;
+  font-size: 120px;
+  color: white;
+}
+.acordio-wold ul {
+  padding-left: 40px;
+}
+.acordio-wold ul li {
+  font-weight: 500;
+  font-size: 32px;
+  color: white;
+  line-height: 50px;
+}
+
+.dashboard-cascata {
+  margin: 20px;
+}
+.dashboard-cascata button {
+  width: 681px;
+  border-radius: 10px;
+  border: 0;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 32px;
+  background-color: white;
+  cursor: pointer;
+}
+.dashboard-cascata button .text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-cascata button .text span {
+  rotate: 0;
+  transition: 0.3s;
+  display: flex;
+}
+.dashboard-cascata button .text span hr {
+  width: 15px;
+  height: 4px;
+  border: 0;
+  background-color: black;
+  rotate: 40deg;
+}
+.dashboard-cascata button .text hr:nth-child(2) {
+  rotate: -40deg;
+  position: relative;
+  right: 6px;
+}
+.dashboard-cascata button .handle-click {
+  transition: 0.3s;
+  height: 0;
+  text-align: left;
+}
+.dashboard-cascata button .handle-click p {
+  -webkit-animation-name: transitionFade;
+          animation-name: transitionFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  margin-top: 20px;
+  font-size: 14px;
+  display: none;
+}
+.dashboard-cascata button:focus .handle-click {
+  height: 100px;
+  background-color: white;
+}
+.dashboard-cascata button:focus .handle-click p {
+  display: block;
+}
+.dashboard-cascata button:focus .text span {
+  rotate: 180deg;
+}
+
+@media screen and (max-width: 1400px) {
+  .container-acord {
+    height: 100%;
+    flex-direction: column;
+  }
+  .acordio-wold h1 {
+    text-align: center;
+  }
+  .acordio-wold ul {
+    padding: 0 0 0 100px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .dashboard-cascata button {
+    width: 100%;
+  }
+  .acordio-wold {
+    width: 100%;
+  }
+  .acordio-wold h1 {
+    font-size: 54px;
+    margin-top: 20px;
+  }
+  .acordio-wold ul {
+    padding: 15px;
+  }
+  .acordio-wold ul li {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .dashboard-cascata button {
+    font-size: 20px;
+  }
+  .dashboard-cascata button:focus .handle-click {
+    height: 160px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+@keyframes transitionFade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+body {
+  background-color: #8a03dd;
+}
+.container-acord{
+  display: flex;
+  gap: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.acordio-wold {
+  h1 {
+    font-weight: 700;
+    font-size: 120px;
+    color: white;
+  }
+  ul {
+    padding-left: 40px;
+    li {
+      font-weight: 500;
+      font-size: 32px;
+      color: white;
+      line-height: 50px;
+    }
+  }
+}
+.dashboard-cascata {
+  margin: 20px;
+  button {
+    width: 681px;
+    border-radius: 10px;
+    border: 0;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 32px;
+    background-color: white;
+    cursor: pointer;
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        rotate: 0;
+        transition: 0.3s;
+        display: flex;
+        hr {
+          width: 15px;
+          height: 4px;
+          border: 0;
+          background-color: black;
+          rotate: 40deg;
+        }
+      }
+      hr:nth-child(2) {
+        rotate: -40deg;
+        position: relative;
+        right: 6px;
+      }
+    }
+    .handle-click {
+      transition: 0.3s;
+      height: 0;
+      text-align: left;
+
+      p {
+        animation-name: transitionFade;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        margin-top: 20px;
+        font-size: 14px;
+        display: none;
+      }
+    }
+  }
+
+  button:focus {
+    .handle-click {
+      height: 100px;
+      background-color: white;
+      p {
+        display: block;
+      }
+    }
+    .text{
+      span{
+        rotate: 180deg;
+        
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px){
+  .container-acord{
+    height: 100%;
+    flex-direction: column;
+  }
+  .acordio-wold{
+   h1{
+    text-align: center;
+   }
+    ul{
+      padding: 0 0 0 100px;
+    }
+  }
+}
+@media screen and (max-width: 750px){
+.dashboard-cascata{
+  button{
+    width: 100%;
+  }
+}
+.acordio-wold{
+  width: 100%;
+  h1{
+    font-size: 54px;
+    margin-top: 20px;
+  }
+  ul{
+    padding: 15px;
+
+    li{
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+
+}
+.dashboard-cascata{
+  button{
+    font-size: 20px;
+  }
+  button:focus{
+    .handle-click{
+      height: 160px;
+    }
+  }
+}
+}
